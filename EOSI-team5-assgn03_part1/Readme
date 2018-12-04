@@ -1,0 +1,27 @@
+Team -5 
+Name - Mayur Khandave  ASU ID - 1215090188
+Name - Bhupinder Singh   ASU ID - 1215098443
+
+
+Objective - Use SPI bus to send the data to the Ring LED
+
+Steps to run -
+
+1) Navigate to the folder contain the code in the terminal
+2) Then compile the code using - make
+3) This will create spi_platform_device.ko and spi_tester
+4) Transfer the code to board using -
+	scp spi_platform_device.ko spi_tester BOARD_IP:/home/root
+5) On board follow following steps -
+
+	i) insmod spi_platform_device.ko
+	ii) ./spi_tester
+	
+
+User Program to drive -
+
+This programs open the character driver and send the RGB color data to the character driver write function
+You can change the Number of LED data to send by -  set data.n = <NUMBER_OF_LED>
+You can change  the RGB color  to send to each LED - set data[<LED_NUMBER>].green, data[<LED_NUMBER>].red, data[<LED_NUMBER>].blue
+
+
